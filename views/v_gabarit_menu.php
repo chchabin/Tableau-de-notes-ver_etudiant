@@ -1,6 +1,6 @@
 
                 <?php foreach ($liens as $k => $v): ?>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo 'index.php?uc=controller-note&action=' . $k; ?>" ><?php echo $v; ?>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo 'index.php?uc=controller-notes&action=' . $k; ?>" ><?php echo $v; ?>
                     <span class="align-text-bottom"></span></a></li>
                 <?php endforeach; ?>
                 </ul>
