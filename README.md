@@ -18,7 +18,7 @@ Vous devez avoir remarqué que les notes obtenues sont toujours les mêmes. Pour
 il faut modifier la fonction dans `getLesNotes` dans `model.php` de la façon suivante :
 >$tNotes[$i] = abs(((int) (cos((float) rand(0,20) + 1) * 1000)) % valSup);
 1. Testez ce résultat et vous devez vous rendre compte qu'il n'y a jamais de notes stables.
-2. Dans le fichier `index.php` mettre à la première ligne le code suivant : [if (!isset($_SESSION)) { session_start(); }](https://www.php.net/manual/fr/function.session-status.php), il s'agit ici de créer une session si elle n'existe pas
+2. Dans le fichier `index.php` mettre à la première ligne le code suivant : [if (session_status() === PHP_SESSION_NONE) { session_start(); }](https://www.php.net/manual/fr/function.session-status.php), il s'agit ici de créer une session si elle n'existe pas
 3. Dans le modèle créer une fonction `getData()` qui appellera la fonction  et qui mettra le résulat dans la variable de session [lesNotes](https://www.php.net/manual/fr/reserved.variables.session.php)
 4. Remplacez dans le contrôleur la fonction `getLesNotes()` par la fonction `getData()`
 
